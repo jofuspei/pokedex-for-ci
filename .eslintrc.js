@@ -19,6 +19,20 @@ module.exports = {
   "plugins": [
     "react", "jest"
   ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "overrides": [
+    {
+      "files": ["cypress/**/*.js"],
+      "globals": {
+        "cy": "readonly",
+        "Cypress": "readonly"
+      }
+    }
+  ],
   "rules": {
     "indent": [
       "error",
