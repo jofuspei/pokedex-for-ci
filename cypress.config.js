@@ -3,5 +3,6 @@ module.exports = {
     baseUrl: 'http://localhost:5000',
     specPattern: 'cypress/integration/**/*.js',
     supportFile: false
-  }
+  },
+  video: false
 }
