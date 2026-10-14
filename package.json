@@ -10,7 +10,7 @@
     "test": "jest",
     "test:e2e": "npx cypress run",
     "eslint": "eslint \"./**/*.{js,jsx}\"",
-    "build": "webpack --mode production"
+    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider webpack --mode production"
   },
   "repository": {
     "type": "git",

@@ -26,8 +26,6 @@ jobs:
       - uses: ./.github/actions/setup
       - name: Build
         run: npm run build
-        env:
-          NODE_OPTIONS: --openssl-legacy-provider
       - uses: actions/upload-artifact@v7
         with:
           name: dist
@@ -74,5 +72,5 @@ jobs:
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
           heroku_app_name: ${{ secrets.HEROKU_APP }}
           heroku_email: ${{ secrets.HEROKU_API_EMAIL }}
-          healthcheck: https://${{ secrets.HEROKU_APP }}.herokuapp.com/health
+          healthcheck: 'https://${{ secrets.HEROKU_APP }}.herokuapp.com/health'
           rollbackonhealthcheckfailed: true
