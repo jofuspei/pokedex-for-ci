@@ -6,15 +6,16 @@ on:
   pull_request:
     branches: [main]
     types: [opened, synchronize]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   deploy:
     runs-on: ubuntu-22.04
 
     steps:
-      - name: Cancel Previous Redundant Builds
-        uses: styfle/cancel-workflow-action@0.13.1
-        with:
-          access_token: ${{ github.token }}
       - uses: actions/checkout@v7
         with:
           fetch-depth: 0
